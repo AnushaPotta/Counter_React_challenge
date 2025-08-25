@@ -11,7 +11,11 @@ export default function Home() {
         onChange={(e) => setInput(e.target.value)}
       />
       <br />
-      {list.filter((i) => i.includes(input))}
+      {list
+        .filter((item) => item.includes(input))
+        .map((item, index) => {
+          return <li key={index}>{item}</li>;
+        })}
     </div>
   );
 }
